@@ -58,7 +58,7 @@ public class MagicCard {
         int mana = 0;
 
         for(int i = 0; i < manaChars.length; i++){
-            if(manaChars[i] < '9' && manaChars[i] > '0'){
+            if(manaChars[i] <= '9' && manaChars[i] > '0'){
                 //if it is a number
                 int val = manaChars[i] - '0';
                 mana += val; 

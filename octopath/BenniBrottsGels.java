@@ -51,6 +51,11 @@ public class BenniBrottsGels implements Comparable<BenniBrottsGels>{
         for(BenniBrottsGels b : l){
             System.out.println(b);
         }
+
+        Collections.sort(l,new BenniBrottsGelsComparator());
+        for(BenniBrottsGels b : l){
+            System.out.println(b);
+        }
        
     }
 

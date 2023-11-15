@@ -24,6 +24,23 @@ public class TreeNode<E> {
         return children;
     }
 
+    public TreeNode<E> findNode(E target){
+        if(this.value == target){
+            return this;
+        } else {
+            for(TreeNode<E> child : children){
+                if(child.findNode(target) != null){
+                    
+                    if(target.equals(child.findNode(target).getValue())){
+                        
+                        return child.findNode(target);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         if(children.size() == 0){
@@ -74,7 +91,12 @@ public class TreeNode<E> {
         c.addChild(j);
         c.addChild(k);
 
-        System.out.println(p);
+        //System.out.println(p);
+
+        System.out.println(p.findNode('F'));
+        System.out.println(p.findNode('C'));
+        System.out.println(p.findNode('X'));
+        System.out.println(p.findNode('Y'));
 
 
         

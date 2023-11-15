@@ -49,6 +49,17 @@ public class TreeNode<E> {
         return "TreeNode [value=" + value + ", children=" + children + "]";
     }
 
+    public String prefixTraversal(){
+        String str = "";
+        str += value + " ";
+
+        for(TreeNode<E> n : children){
+            str += n.prefixTraversal();
+        }
+
+        return str;
+    }
+
     public static void main(String[] args){
         TreeNode<Character> a = new TreeNode<>('A');
         TreeNode<Character> b = new TreeNode<>('B');
